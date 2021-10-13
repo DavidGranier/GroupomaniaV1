@@ -50,7 +50,7 @@ Enregistrez les modifications.
 
 ## Compte Modérateur ##
 Pour donner les droits de modérateur à un utilisateur vous devez depuis le terminal MySQL effectuer la commande: 
-`INSERT INTO users (niveau_acces) VALUES ("1") WHERE email=` + l'adresse mail du compte 
+`UPDATE users SET niveau_acces="1" WHERE id="1";` (Mettre l'id du compte que l'on souhaite affecter)
 
 
 
