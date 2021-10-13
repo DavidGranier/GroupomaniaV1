@@ -1,0 +1,1 @@
+Ce fichier stock les images téléchargées par les utilisateurs
