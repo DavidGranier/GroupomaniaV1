@@ -1,0 +1,40 @@
+<template>
+    <div class="headerauth">
+        <router-link :to="{name:'Home'}"><img class="logogroupomania" src="../assets/icon-left-font-monochrome-white.svg" alt="Logo site"></router-link>
+        <div class="headerauth__icon">
+            <router-link :to="{name:'Settings'}"><i class="fas fa-cog fa-2x boutonsetings"></i></router-link>
+            
+        </div>
+    </div> 
+</template>
+
+<style lang='scss' scoped>
+
+    .headerauth{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &>img {
+            margin-left: 20px;
+            height: 30px;
+        }
+        
+    }
+
+
+    .logogroupomania{
+        margin-left: 20px;
+            height: 30px;
+    }
+    .boutonsetings{
+        color: white;
+        margin-right: 20px;
+    }
+    .boutonprofil{
+        color: white;
+        margin-right: 20px;
+    }
+
+</style>
