@@ -1,6 +1,7 @@
 <template>
 
     <div class="connexion">
+        <h1>Connectez-vous</h1>
         <form @submit.prevent = login()><!--FONCTION login()-->
 
             <label for="email">E-mail</label>
@@ -84,6 +85,7 @@ export default {
     margin: auto;
     margin-top: 100px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -103,6 +105,10 @@ export default {
 
 .message-erreur{
     color:red;
+}
+
+h1{
+    margin: 10px 0px;
 }
 
 </style>

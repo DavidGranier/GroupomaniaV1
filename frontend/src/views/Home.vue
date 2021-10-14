@@ -62,7 +62,7 @@ export default {
       if(localStorage.groupomaniaUser == undefined){
         this.approuvedConnexion = false;
         console.log('Utilisateur non connecté !');
-        this.$router.push({ name:'Login' })
+        this.$router.push({ name:'Login' });
       } else {
         this.approuvedConnexion = true;
         console.log('Utilisateur connecté !');

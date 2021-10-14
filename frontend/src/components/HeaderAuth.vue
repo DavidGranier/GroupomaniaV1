@@ -1,10 +1,10 @@
 <template>
-    <div class="headerauth">
-        <router-link :to="{name:'Home'}" title="Acceuil"><img class="logogroupomania" src="../assets/icon-left-font-monochrome-white.svg" alt="Logo site"></router-link>
+    <nav class="headerauth">
+        <router-link :to="{name:'Home'}" title="Acceuil"><img class="logogroupomania" src="../assets/icon-left-font-monochrome-white.svg" alt="Groupomania"></router-link>
         <div class="headerauth__icon">
             <router-link :to="{name:'Settings'}" title="Options"><i class="fas fa-cog fa-2x boutonsetings"></i></router-link>
         </div>
-    </div> 
+    </nav> 
 </template>
 
 <style lang='scss' scoped>

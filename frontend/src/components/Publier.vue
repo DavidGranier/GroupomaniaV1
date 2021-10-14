@@ -9,9 +9,10 @@
             
             <textarea id="posttext" type="textarea" placeholder="Exprimez-vous!"></textarea>
             <div>{{message}}</div>
-            <button type="submit" class="bouton">Publier</button>
-            <input type="file" accept="image/jpg,image/jpeg,image/png" ref="uploadImage" id="uploadImage" title="Renseignez une image pour votre publication"/>
             
+            <label for="uploadImage">Ajoutez une image</label>
+            <input type="file" accept="image/jpg,image/jpeg,image/png" ref="uploadImage" id="uploadImage" title="Renseignez une image pour votre publication"/>
+            <button type="submit" class="bouton">Publier</button>
 
         </form>
     </div>
@@ -28,7 +29,7 @@ export default {
 
   data() {
     return{
-      approuvedConnexion: false,      // on déclare une varibale de type boléen, false par défault (contiendra la validation comme quoi un utilisateur est authentifié)
+            
       sessionUserId: 0,               // on déclare une varibale de type nombre, 0 par défault (contiendra le userId du token de la session utilisateur)
       sessionUserAcces: 0,            // on déclare une varibale de type nombre, 0 par défault (contiendra le niveau d'acces du token de la session utilisateur)
       
@@ -37,10 +38,6 @@ export default {
     };
   },
 
- created(){                          // hook de cycle de vie qui intervient avant le hook mounted et vérifie la session utilisateur (Item dans le localStorage)
-    this.connectedUser()
-    
-  },
 
   mounted(){
     if(this.approuvedConnexion === true) {
@@ -52,16 +49,7 @@ export default {
   },
   
   methods: {
-    connectedUser(){                                        // fonction de vérification de la session utilisateur (Item dans le localStorage)
-      if(localStorage.groupomaniaUser == undefined){
-        this.approuvedConnexion = false;
-        console.log('Utilisateur non connecté !');
-        this.$router.push({ name:'Home' })
-      } else {
-        this.approuvedConnexion = true;
-        
-      }
-    },
+    
     
 
     newPublication(){                                     // fonction qui gère la création d'une nouvelle publication (requête)
@@ -113,7 +101,6 @@ export default {
 }
 
 
-
 p{
   text-align: justify;
   padding : 20px;
@@ -124,7 +111,7 @@ textarea {
     width: 240px;
     height: 70px;
     margin-top: 20px;
-    
+    margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
     
     resize: none;
@@ -132,7 +119,12 @@ textarea {
 }
 
 #uploadImage{
-  margin-bottom: 20px;
+  
+  background: #ecf0f3;
+}
+
+#file-upload-button{
+  background: red;
 }
 
 

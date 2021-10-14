@@ -2,6 +2,7 @@
 <template>
 
     <div class="inscription">
+        <h1>Inscrivez-vous</h1>
 
       <form @submit.prevent = signup()><!--FONCTION signup()-->
 
@@ -100,6 +101,7 @@ export default({
     width: 350px;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -115,6 +117,14 @@ export default({
     height: 40px;
     border: none;
     margin-bottom: 30px;
+}
+
+h1{
+    margin: 10px 0px;
+}
+
+.message-erreur{
+    max-width: 300px;
 }
 
 </style>
