@@ -1,7 +1,7 @@
 <template>
 <div >
     <div v-if="publications.length === 0">
-        <div class="mt-15 mb-15 mx-auto text-h4 text-center">Aucune publication trouvée...</div>
+        <div class="aucunpost">Commencez par publier quelque chose ! </div>
     </div>
 
     <div class="post" v-for="publication in publications" :key="publication.publicationId">
@@ -72,6 +72,11 @@ export default {
 
 
 <style lang="scss" scoped>
+
+.aucunpost{
+    height: 250px;
+    margin-top: 50px;
+}
 
 .post {
     background: white;

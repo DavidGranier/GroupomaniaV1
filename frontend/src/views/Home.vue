@@ -2,6 +2,7 @@
   <div class="home">
     <HeaderAuth/>
     <div class="contenu">
+      <h1>Bonjour {{ userName.userPrenom }} {{ userName.userNom }}!</h1>
       
       <Publier/>
       <Post/>
@@ -16,7 +17,7 @@ import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 dotenv.config();
 import HeaderAuth from '@/components/HeaderAuth.vue'
-
+import {connectedClient} from "@/services/auth.js"
 import Publier from '@/components/Publier.vue'
 import Post from '@/components/Post.vue'
 
@@ -26,7 +27,6 @@ export default {
 
   components: {
     HeaderAuth,
-    
     Publier,
     Post
 
@@ -37,12 +37,14 @@ export default {
       approuvedConnexion: false,      // on déclare une varibale de type boléen, false par défault (contiendra la validation comme quoi un utilisateur est authentifié)
       sessionUserId: 0,               // on déclare une varibale de type nombre, 0 par défault (contiendra le userId du token de la session utilisateur)
       sessionUserAcces: 0,            // on déclare une varibale de type nombre, 0 par défault (contiendra le niveau d'acces du token de la session utilisateur)
-      message: ""                     // on déclare une varibale de type string, vide par défault (contiendra les messages d'erreur envoyé par le back)
+      message: "",                   // on déclare une varibale de type string, vide par défault (contiendra les messages d'erreur envoyé par le back)
+      userName:"",
     };
   },
 
   created(){                        // hook de cycle de vie qui intervient avant le hook mounted et vérifie la session utilisateur (Item dans le localStorage)
     this.connectedUser()
+    this.getName()
     
   },
 
@@ -67,6 +69,18 @@ export default {
       }
     },
 
+    getName(){
+      connectedClient.get(`/users/name`)
+      .then(res => {
+            
+            this.userName = res.data[0];
+            console.log(res);
+            })
+      .catch((error) => {
+            console.log(error);
+        })
+    },
+
     
 
 
@@ -75,6 +89,12 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
+h1{
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 30px;
+}
 </style>
+

@@ -3,8 +3,10 @@
       
         <form @submit.prevent = newPublication()>
             
-            <h1>Bonjour {{ userName.userPrenom }} {{ userName.userNom }}!</h1>
+            
+            <label for="posttext">Partagez du contenu avec nos collaborateurs !</label>
             <br>
+            
             <textarea id="posttext" type="textarea" placeholder="Exprimez-vous!"></textarea>
             <div>{{message}}</div>
             <button type="submit" class="bouton">Publier</button>
@@ -29,7 +31,7 @@ export default {
       approuvedConnexion: false,      // on déclare une varibale de type boléen, false par défault (contiendra la validation comme quoi un utilisateur est authentifié)
       sessionUserId: 0,               // on déclare une varibale de type nombre, 0 par défault (contiendra le userId du token de la session utilisateur)
       sessionUserAcces: 0,            // on déclare une varibale de type nombre, 0 par défault (contiendra le niveau d'acces du token de la session utilisateur)
-      userName:"",
+      
       
       message: ""  ,                   // on déclare une varibale de type string, vide par défault (contiendra les messages d'erreur envoyé par le back)
     };
@@ -37,7 +39,7 @@ export default {
 
  created(){                          // hook de cycle de vie qui intervient avant le hook mounted et vérifie la session utilisateur (Item dans le localStorage)
     this.connectedUser()
-    this.getName()
+    
   },
 
   mounted(){
@@ -59,21 +61,6 @@ export default {
         this.approuvedConnexion = true;
         
       }
-    },
-
-    getName(){
-
-      
-
-      connectedClient.get(`/users/name`)
-      .then(res => {
-            
-            this.userName = res.data[0];
-            console.log(res);
-            })
-      .catch((error) => {
-            console.log(error);
-        })
     },
     
 
@@ -118,15 +105,14 @@ export default {
     margin: 30px auto;
     &>form {
         text-align: center;
+        padding-top:20px;
         &>img{
           width: 100px;
         }
     }
 }
 
-h1{
-  font-size: 1.2em;
-}
+
 
 p{
   text-align: justify;
@@ -135,13 +121,14 @@ p{
 }
 
 textarea {
-    width: 250px;
+    width: 240px;
     height: 70px;
+    margin-top: 20px;
     
     font-family: Arial, Helvetica, sans-serif;
     
     resize: none;
-    border: groove;
+    border: 1px solid grey;
 }
 
 #uploadImage{

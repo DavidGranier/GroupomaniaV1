@@ -5,13 +5,18 @@
         
 
         <button class="bouton" @click="logout()">Se déconnecter</button>
-
+        
         <form @submit.prevent = modifyName()>
+          <hr/>
+          <label for="prenom">Modifier votre prénom :</label>
           <input id="prenom" ref="prenom" type="text" placeholder="Prenom" title="Prenom">
+          <label for="nom">Modifier votre nom :</label>
           <input id="nom" ref="nom" type="text" placeholder="Nom" title="Nom">
-          <button class="bouton" type="submit">Modifier mon Nom / Prénom</button>
+          <button class="bouton" type="submit">Enregistrer les modifications</button>
           <p>{{ errorMessage }}{{ succesMessage }}</p>
+          <hr/>
         </form>
+        
 
         <button class="bouton" v-on:click="deleteUser()">Supprimer le compte</button>
          
@@ -139,6 +144,7 @@ form{
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+
 }
 
 form > input {

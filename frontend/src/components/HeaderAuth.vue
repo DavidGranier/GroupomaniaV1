@@ -1,9 +1,8 @@
 <template>
     <div class="headerauth">
-        <router-link :to="{name:'Home'}"><img class="logogroupomania" src="../assets/icon-left-font-monochrome-white.svg" alt="Logo site"></router-link>
+        <router-link :to="{name:'Home'}" title="Acceuil"><img class="logogroupomania" src="../assets/icon-left-font-monochrome-white.svg" alt="Logo site"></router-link>
         <div class="headerauth__icon">
-            <router-link :to="{name:'Settings'}"><i class="fas fa-cog fa-2x boutonsetings"></i></router-link>
-            
+            <router-link :to="{name:'Settings'}" title="Options"><i class="fas fa-cog fa-2x boutonsetings"></i></router-link>
         </div>
     </div> 
 </template>
