@@ -1,5 +1,15 @@
 # GROUPOMANIA #
 
+
+## PREVIEW ##
+
+![gpm1](https://user-images.githubusercontent.com/79712595/138065860-ea4fb4dc-912d-4f52-95af-9167372f127f.png)
+![gpm2](https://user-images.githubusercontent.com/79712595/138065864-39e9910f-5af8-4183-8d1e-7dd6c55e1365.png)
+![gpm3](https://user-images.githubusercontent.com/79712595/138065866-e2c8da00-9a04-484e-af25-d70e4da92874.png)
+![gpm4](https://user-images.githubusercontent.com/79712595/138065870-bbc555bf-b3da-4c02-838d-fb5bb4073dd9.png)
+![gpm5](https://user-images.githubusercontent.com/79712595/138065873-7a0be42a-a65c-4191-a551-7fa1951634f2.png)
+
+
 Bienvenue sur la première version de l'application Groupomania.
 Cette application est un réseau social d'entreprise qui permet aux collaborateurs de : 
 - créer un compte
